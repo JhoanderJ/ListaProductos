@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list *ngFor="let producto of productos"
+              (click)="mostrarProducto(producto)">
+        <ion-item class="item-thumbnail-left">
+          <img [src]="producto.imagenes">
+          <h2>{{producto.nombre}}</h2>
+          <p>{{producto.descripcion}}</p>
+          <p>{{producto.precio}}</p>
+          <p> Calificacion {{producto.rating}} </p>
+        </ion-item>
+    </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" [navPush]="agregarProductoPage">
+      <ion-icon name="add" ></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

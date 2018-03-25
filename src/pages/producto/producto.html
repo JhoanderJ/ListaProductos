@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="cerrar()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+        <button ion-button icon-only>
+          <ion-icon name=""></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>Detalle Producto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <img [src]="producto.imagenes">
+    <h2>{{producto.nombre}}</h2>
+    <h2>{{producto.descripcion}}</h2>
+    <h2>{{producto.precio}}</h2>
+    <h2>Calificacion {{producto.rating}}</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          
+        </ion-col>
+      </ion-row>
+      
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Agregar Producto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+ <form #formulario="ngForm" (ngSubmit)="agregarProducto(formulario)">
+  <ion-grid>
+    <ion-row>
+      <ion-col >
+         <ion-item>
+           <ion-label floating>Nombre del Producto</ion-label>
+           <ion-input type="text" name="nombre" ngModel required></ion-input>
+         </ion-item>
+      </ion-col>
+      <ion-col>
+          <ion-item>
+              <ion-label floating>Descripcion del Producto</ion-label>
+              <ion-input type="text" name="descripcion" ngModel required></ion-input>
+            </ion-item>   
+      </ion-col>
+       <ion-col>
+          <ion-item>
+              <ion-label floating>Precio del Producto</ion-label>
+              <ion-input type="text" name="precio" ngModel required></ion-input>
+            </ion-item>   
+      </ion-col>     
+        <ion-row>
+            <ion-label> Imagen </ion-label>
+          <ion-item  > 
+            <input  ion-button block name="imagen" type="file" (change)="subirImagen($event)"/>
+          </ion-item>       
+        </ion-row>      
+    </ion-row>
+    <ion-row text-center>
+        <ion-col>
+          <rating name="rating" ngModel></rating>
+        </ion-col>
+    </ion-row>
+      <ion-row>
+        <ion-col>
+        <button ion-button block type="submit" >Agregar Producto</button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</form>
+</ion-content>
